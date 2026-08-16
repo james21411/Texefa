@@ -509,11 +509,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .brochure-band { color: #fff; }
 .section-sep {
-    min-height: clamp(180px, 28vh, 340px);
-    background-attachment: fixed;
+    min-height: 200px;
 }
-@media (max-width: 991.98px) {
-    .section-sep { background-attachment: scroll; }
+@media (min-width: 768px) {
+    .section-sep { min-height: 300px; }
+}
+@media (min-width: 1200px) {
+    .section-sep { min-height: 340px; background-attachment: fixed; }
 }
 .brochure-note {
     font-weight: 700;
