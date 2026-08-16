@@ -329,10 +329,8 @@ function renderProjects(items) {
                 </div>
             </div>` : '';
 
-        const cta = p.url
-            ? `<a href="${p.url}" target="_blank" rel="noopener" class="btn btn-brand w-100">Visiter le site<span class="ms-2">${icons.arrowRight}</span></a>`
-            : `<a href="https://wa.me/237698385186?text=${encodeURIComponent(`Bonjour Texefa, je souhaite en savoir plus sur ${p.name}.`)}" target="_blank" rel="noopener" class="btn btn-outline-violet w-100">
-                <span class="text-wa me-2">${icons.whatsapp}</span>Discuter de ce projet
+        const cta = `<a href="${p.url || `https://wa.me/237698385186?text=${encodeURIComponent(`Bonjour Texefa, je souhaite en savoir plus sur ${p.name}.`)}`}" ${p.url ? 'target="_blank" rel="noopener"' : ''} class="btn btn-outline-violet w-100">
+                <span class="text-wa me-2">${icons.whatsapp}</span>${p.url ? 'Visiter le site' : 'Discuter de ce projet'}
             </a>`;
 
         return `
@@ -365,6 +363,19 @@ document.getElementById('projects-grid').innerHTML = renderProjects(projects);
 /* ---------------- Apparition au défilement ---------------- */
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------------- Vidéo de fond du héros ---------------- */
+
+const heroBgVideos = ["images/bg_1.mp4", "images/bg_2.mp4"];
+let heroBgIndex = 0;
+const heroBgEl = document.getElementById("hero-bg");
+if (heroBgEl && !reduceMotion) {
+    heroBgEl.addEventListener("ended", () => {
+        heroBgIndex = (heroBgIndex + 1) % heroBgVideos.length;
+        heroBgEl.src = heroBgVideos[heroBgIndex];
+        heroBgEl.play().catch(() => {});
+    });
+}
 
 function staggerReveals() {
     document.querySelectorAll('[data-reveal-group]').forEach(group => {

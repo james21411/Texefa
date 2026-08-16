@@ -107,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     .c3d-track { transform: none !important; }
     .c3d-slide { position: relative !important; inset: auto !important; opacity: 1 !important; transform: none !important; }
     .c3d-nav { display: none; }
+    .hero-video { display: none; }
 }
 
 /* ---------- Boutons ---------- */
@@ -219,6 +220,23 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
     background: var(--violet-deep);
 }
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero-veil {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(12, 1, 38, .6);
+    pointer-events: none;
+}
+.hero-orb, .hero-grid, .hero-grain { z-index: 1; }
+.hero .container { z-index: 2; }
 
 .hero-orb {
     position: absolute;
@@ -464,6 +482,8 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 991.98px) { .section { padding: 4.75rem 0; } }
 .section-surface { background: var(--surface); }
 .section-soft { background: var(--surface-soft); }
+.section#offres { padding-bottom: 0; }
+.section#realisations { padding-top: 0; }
 
 .h2-title {
     font-weight: 800;
@@ -482,9 +502,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- Bandeau promotion ---------- */
-.brochure-band {
+.brochure-band, .section-sep {
     background: var(--violet-ink) url("../images/arriere_plam.jpeg") center/cover no-repeat;
-    color: #fff;
+}
+.brochure-band { color: #fff; }
+.section-sep {
+    min-height: clamp(180px, 28vh, 340px);
+    background-attachment: fixed;
+}
+@media (max-width: 991.98px) {
+    .section-sep { background-attachment: scroll; }
 }
 .brochure-note {
     font-weight: 700;
