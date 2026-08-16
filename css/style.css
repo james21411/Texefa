@@ -1020,6 +1020,9 @@ h1, h2, h3, h4, h5, h6 {
 [data-reveal="right"] { transform: translateX(38px); }
 [data-reveal].is-inview { opacity: 1; transform: none; }
 
+/* ---------- Garde-fou mobile : aucun débordement horizontal ---------- */
+html, body { overflow-x: clip; }
+
 /* ---------- Adaptation mobile (mobile-first) ---------- */
 @media (max-width: 767.98px) {
     .brochure-band .container { flex-direction: column; }
