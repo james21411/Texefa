@@ -1019,3 +1019,23 @@ h1, h2, h3, h4, h5, h6 {
 [data-reveal="left"] { transform: translateX(-38px); }
 [data-reveal="right"] { transform: translateX(38px); }
 [data-reveal].is-inview { opacity: 1; transform: none; }
+
+/* ---------- Adaptation mobile (mobile-first) ---------- */
+@media (max-width: 767.98px) {
+    .brochure-band .container { flex-direction: column; }
+    .hero-band-inner { padding: 3.25rem 1rem; }
+}
+@media (max-width: 575.98px) {
+    .row { --bs-gutter-x: 1.5rem; }
+    .section { padding: 3.75rem 0; }
+    .section#offres { padding-bottom: 0; }
+    .section#realisations { padding-top: 0; }
+    .offer-head { padding: 1.25rem 1.25rem 0; }
+    .offer-body { padding: 1.15rem 1.25rem 1.4rem; }
+    .offer-price { font-size: 1.3rem; }
+    .project-body { padding: 1.3rem 1.25rem 1.5rem; }
+    .stats-row { padding: 1.5rem 1.15rem; gap: 1.25rem; }
+    .pillar { gap: 1rem; }
+    .c3d-stage { height: 360px; }
+    .c3d-dots { bottom: -26px; }
+}
