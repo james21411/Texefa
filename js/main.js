@@ -2,6 +2,27 @@
    TEXEFA — Données + rendu + interactions
    ============================================================ */
 
+const S = (stroke, fill = "none") =>
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="${fill}" ${fill === "none" ? `stroke="${stroke}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"` : ""} aria-hidden="true">`;
+
+const icons = {
+    cap: S("currentColor") + `<path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
+    feather: S("currentColor") + `<path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"></path><path d="m2 2 7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>`,
+    code: S("currentColor") + `<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
+    building: S("currentColor") + `<rect x="4" y="2" width="16" height="20" rx="0"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"></path></svg>`,
+    ship: S("currentColor") + `<path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path><path d="M12 10v4"></path><path d="M12 2v3"></path></svg>`,
+    seedling: S("currentColor") + `<path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg>`,
+    factory: S("currentColor") + `<path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M17 18h1M12 18h1M7 18h1"></path></svg>`,
+    school: S("currentColor") + `<path d="m14 5-2 2-2-2"></path><path d="M22 10 12 5 2 10v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z"></path><path d="M6 12v8M12 12v8M18 12v8"></path></svg>`,
+    megaphone: S("currentColor") + `<path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>`,
+    messages: S("currentColor") + `<path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg>`,
+    check: S("currentColor") + `<path d="M20 6 9 17l-5-5"></path></svg>`,
+    star: S("currentColor", "currentColor") + `<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>`,
+    arrowRight: S("currentColor") + `<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>`,
+    arrowDown: S("currentColor") + `<path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>`,
+    whatsapp: S("currentColor", "currentColor") + `<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>`
+};
+
 const navItems = [
     { label: "Accueil", href: "#hero" },
     { label: "À propos", href: "#a-propos" },
@@ -16,8 +37,8 @@ const serviceCards = [
     {
         title: "Academy",
         tagColor: "text-violet",
-        icon: "fa-solid fa-graduation-cap",
-        image: "https://picsum.photos/seed/texefa-academy/900/1100",
+        icon: "cap",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
         alt: "Étudiants en formation Texefa, en ligne et en présentiel",
         intro: "Notre académie forme la prochaine génération de leaders et de spécialistes, avec des programmes intensifs, pratiques et certifiants, adaptés aux besoins du marché.",
         points: [
@@ -33,8 +54,8 @@ const serviceCards = [
     {
         title: "Services éditoriaux & scientifiques",
         tagColor: "text-mauve",
-        icon: "fa-solid fa-feather-pointed",
-        image: "https://picsum.photos/seed/texefa-edition/900/560",
+        icon: "feather",
+        image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop",
         alt: "Manuscrits et publications scientifiques édités par Texefa",
         intro: "Un partenaire de confiance pour les chercheurs, les institutions académiques et les éditeurs : qualité, rigueur et visibilité.",
         points: [
@@ -49,8 +70,8 @@ const serviceCards = [
     {
         title: "Développement IT & IA",
         tagColor: "text-coral",
-        icon: "fa-solid fa-code",
-        image: "https://picsum.photos/seed/texefa-it/900/560",
+        icon: "code",
+        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
         alt: "Développeurs Texefa créant des applications et solutions d'intelligence artificielle",
         intro: "Notre équipe technique transforme vos idées en produits digitaux performants et évolutifs.",
         points: [
@@ -69,27 +90,27 @@ const testimonials = [
         name: "Karim B.",
         role: "Directeur d'école, Casablanca",
         text: "Texefa nous a accompagnés dans la création de notre plateforme EdTech. Une équipe à l'écoute, créative et très professionnelle.",
-        avatar: "https://picsum.photos/seed/texefa-temoignage-karim/200/200"
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
     },
     {
         name: "Dr. Marie N.",
         role: "Chercheuse, Yaoundé",
         text: "Grâce à Texefa, j'ai pu publier mes travaux dans une revue indexée. Leur coaching en scientific writing a été d'une aide précieuse.",
-        avatar: "https://picsum.photos/seed/texefa-temoignage-marie/200/200"
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
     },
     {
         name: "Awa S.",
         role: "Responsable RH, Douala",
         text: "Les formations de Texefa ont boosté les compétences de nos équipes en IA. Des programmes concrets et directement applicables.",
-        avatar: "https://picsum.photos/seed/texefa-temoignage-awa/200/200"
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
     }
 ];
 
 const futureCards = [
-    { num: "01", title: "Immobilier", icon: "fa-solid fa-building", desc: "Investissements, promotion et gestion de projets immobiliers résidentiels et commerciaux.", color: "text-violet" },
-    { num: "02", title: "Import & Export", icon: "fa-solid fa-ship", desc: "Commerce international, sourcing et logistique entre l'Afrique, l'Europe et l'Asie.", color: "text-mauve" },
-    { num: "03", title: "Agriculture", icon: "fa-solid fa-seedling", desc: "Projets agricoles modernes et durables, avec un focus sur la productivité et l'impact social.", color: "text-coral" },
-    { num: "04", title: "Agro-industrie", icon: "fa-solid fa-industry", desc: "Transformation locale des produits agricoles et création de valeur ajoutée.", color: "text-lilas" }
+    { num: "01", title: "Immobilier", icon: "building", desc: "Investissements, promotion et gestion de projets immobiliers résidentiels et commerciaux.", color: "text-violet" },
+    { num: "02", title: "Import & Export", icon: "ship", desc: "Commerce international, sourcing et logistique entre l'Afrique, l'Europe et l'Asie.", color: "text-mauve" },
+    { num: "03", title: "Agriculture", icon: "seedling", desc: "Projets agricoles modernes et durables, avec un focus sur la productivité et l'impact social.", color: "text-coral" },
+    { num: "04", title: "Agro-industrie", icon: "factory", desc: "Transformation locale des produits agricoles et création de valeur ajoutée.", color: "text-lilas" }
 ];
 
 const offers = [
@@ -98,6 +119,8 @@ const offers = [
         price: "100 000",
         suffix: "FCFA",
         badge: "Populaire",
+        image: "images/site_vitrine.jpeg",
+        alt: "Site vitrine professionnel affiché sur un ordinateur portable",
         features: [
             "Design moderne et responsive",
             "Jusqu'à 5 pages",
@@ -113,6 +136,8 @@ const offers = [
         suffix: "FCFA",
         badge: "Boutique",
         featured: true,
+        image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop",
+        alt: "Boutique en ligne et achats sécurisés",
         features: [
             "Boutique en ligne complète",
             "Gestion des produits",
@@ -126,6 +151,8 @@ const offers = [
         price: "180 000",
         suffix: "FCFA dès",
         badge: "Applications",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+        alt: "Applications web et portails avec tableau de bord",
         features: [
             "Applications web",
             "Portails web",
@@ -138,6 +165,8 @@ const offers = [
         price: "120 000",
         suffix: "FCFA",
         badge: "Sur mesure",
+        image: "images/application_desktop.jpeg",
+        alt: "Application de bureau sur un espace de travail moderne",
         features: [
             "Application sur mesure",
             "Interface moderne",
@@ -150,6 +179,8 @@ const offers = [
         price: "75 000",
         suffix: "FCFA / an",
         badge: "Tranquillité",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
+        alt: "Serveurs et hébergement de sites web",
         features: [
             "Hébergement offert 1 an",
             "Nom de domaine",
@@ -164,21 +195,25 @@ const projects = [
     {
         name: "Fosilamaster",
         tag: "Application complète",
-        icon: "fa-solid fa-school",
+        icon: "school",
         desc: "Gestion scolaire de bout en bout : élèves, enseignants, notes, paiements et communication.",
-        color: "text-violet"
+        color: "text-violet",
+        url: "https://fosilamaster.verificationticket.com/",
+        images: ["images/fosila_1.png", "images/fosila_2.png", "images/fosila_3.png"]
     },
     {
         name: "CAITED",
         tag: "Site officiel",
-        icon: "fa-solid fa-tower-observation",
+        icon: "megaphone",
         desc: "Site officiel de la Conférence : programme, intervenants, inscriptions et actes.",
-        color: "text-coral"
+        color: "text-coral",
+        url: "https://caited.ens.cm/",
+        images: ["images/caited_1.png", "images/caited_2.png", "images/caited_3.png"]
     },
     {
         name: "NexusTrans",
         tag: "Communication",
-        icon: "fa-solid fa-comments",
+        icon: "messages",
         desc: "Application de messagerie et de communication pour les équipes et les réseaux.",
         color: "text-mauve"
     }
@@ -196,8 +231,8 @@ const footerNav = [
 
 const heroSlides = [
     { img: "flyer.jpeg", title: "Brochure officielle — développement web", href: "#offres" },
-    { img: "https://picsum.photos/seed/texefa-academy-3d/600/800", title: "Academy & certifications", tag: "Formation", alt: "Étudiants en formation Texefa", href: "#services" },
-    { img: "https://picsum.photos/seed/texefa-web-3d/600/800", title: "Sites, applications & IA", tag: "Présence digitale", alt: "Écran affichant un site web développé par Texefa", href: "#contact" }
+    { img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop", title: "Academy & certifications", tag: "Formation", alt: "Étudiants en formation Texefa", href: "#services" },
+    { img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop", title: "Sites, applications & IA", tag: "Présence digitale", alt: "Écran affichant un site web développé par Texefa", href: "#contact" }
 ];
 
 const softTints = {
@@ -224,11 +259,11 @@ function renderNav(items) {
 function renderServiceCards(items) {
     return items.map((item, index) => {
         const pointsHtml = item.points.map(p =>
-            `<li><i class="fa-solid fa-circle-check ${item.tagColor}" aria-hidden="true"></i>${p}</li>`
+            `<li><span class="${item.tagColor}">${icons.check}</span>${p}</li>`
         ).join('');
         const badge = `
             <span class="tag-pill ${item.tagColor}">
-                <i class="${item.icon}" aria-hidden="true"></i>${item.title.split(' ')[0]}
+                <span class="d-inline-flex">${icons[item.icon]}</span>${item.title.split(' ')[0]}
             </span>`;
 
         if (index === 0) {
@@ -238,11 +273,11 @@ function renderServiceCards(items) {
                     <div class="col-sm-5 featured-media-col position-relative">
                         ${badge}
                         <div class="service-media sm-tall">
-                            <img src="${item.image}" alt="${item.alt}" loading="lazy" width="900" height="1100">
+                            <img src="${item.image}" alt="${item.alt}" loading="lazy" width="1200" height="1400">
                         </div>
                     </div>
                     <div class="service-body d-flex flex-column">
-                        <span class="icon-box ${softTints[item.tagColor] || 'soft-violet'} mb-3"><i class="${item.icon} ${item.tagColor}"></i></span>
+                        <span class="icon-box ${softTints[item.tagColor] || 'soft-violet'} mb-3"><span class="${item.tagColor}">${icons[item.icon]}</span></span>
                         <h3 class="h4 fw-bold">${item.title}</h3>
                         <p class="text-body-secondary mt-2">${item.intro}</p>
                         <ul class="service-points mt-3">${pointsHtml}</ul>
@@ -257,7 +292,7 @@ function renderServiceCards(items) {
                 <article class="service-card d-flex flex-column">
                     <div class="service-media sm-wide position-relative">
                         ${badge}
-                        <img src="${item.image}" alt="${item.alt}" loading="lazy" width="900" height="560">
+                        <img src="${item.image}" alt="${item.alt}" loading="lazy" width="1200" height="750">
                     </div>
                     <div class="service-body d-flex flex-column">
                         <h3 class="h5 fw-bold">${item.title}</h3>
@@ -270,10 +305,12 @@ function renderServiceCards(items) {
     }).join('');
 }
 
+const starRow = `${icons.star}${icons.star}${icons.star}${icons.star}${icons.star}`;
+
 function renderTestimonials(items) {
     return items.map((item, index) => {
         const body = `
-            <div class="testi-mark text-gradient" aria-hidden="true">&ldquo;</div>
+            <div class="testi-mark text-violet" aria-hidden="true">&ldquo;</div>
             <blockquote class="testi-quote mt-3 mb-4">&laquo;&nbsp;${item.text}&nbsp;&raquo;</blockquote>
             <figcaption class="d-flex align-items-center gap-3">
                 <img src="${item.avatar}" alt="Photo de ${item.name}" class="rounded-circle" width="52" height="52" loading="lazy">
@@ -288,7 +325,7 @@ function renderTestimonials(items) {
             <div class="col-lg-5" data-reveal>
                 <figure class="testi-card testi-featured d-flex flex-column">
                     <div class="testi-stars mb-2" aria-label="Note : 5 étoiles sur 5">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        ${starRow}
                     </div>
                     ${body}
                 </figure>
@@ -301,7 +338,7 @@ function renderTestimonials(items) {
                     <img src="${item.avatar}" alt="Photo de ${item.name}" class="rounded-circle flex-shrink-0" width="64" height="64" loading="lazy">
                     <div class="flex-grow-1">
                         <div class="testi-stars mb-2" aria-label="Note : 5 étoiles sur 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            ${starRow}
                         </div>
                         <blockquote class="testi-quote mb-0">&laquo;&nbsp;${item.text}&nbsp;&raquo;</blockquote>
                         <figcaption class="mt-3">
@@ -319,7 +356,7 @@ function renderFutureCards(items) {
         <div class="col-sm-6 col-lg-3" data-reveal>
             <article class="future-card ${item.color}">
                 <span class="future-num" aria-hidden="true">${item.num}</span>
-                <i class="${item.icon} future-ico" aria-hidden="true"></i>
+                <span class="future-ico ${item.color}">${icons[item.icon] || ''}</span>
                 <h3 class="h5 fw-bold">${item.title}</h3>
                 <p class="text-white-50 small mt-2 mb-0">${item.desc}</p>
             </article>
@@ -342,17 +379,18 @@ function renderOffers(items) {
     return items.map(o => `
         <div class="col-lg-4 col-md-6 d-flex" data-reveal>
             <article class="offer-card w-100">
-                <div class="offer-head">
+                <div class="offer-media">
+                    <img src="${o.image}" alt="${o.alt}" loading="lazy" width="1200" height="800">
                     <span class="offer-badge${o.featured ? ' offer-badge-hot' : ''}">${o.badge}</span>
                 </div>
-                <div class="offer-body d-flex flex-column pt-0">
+                <div class="offer-body d-flex flex-column">
                     <h3 class="h6 fw-bold mb-0">${o.title}</h3>
-                    <p class="offer-price mb-0"><span class="font-display fst-italic text-gradient">${o.price}</span><small>${o.suffix}</small></p>
+                    <p class="offer-price mb-0"><span class="font-display fst-italic text-violet">${o.price}</span><small>${o.suffix}</small></p>
                     <ul class="service-points mt-3 mb-0">
-                        ${o.features.map(f => `<li><i class="fa-solid fa-circle-check text-coral" aria-hidden="true"></i>${f}</li>`).join('')}
+                        ${o.features.map(f => `<li><span class="text-coral">${icons.check}</span>${f}</li>`).join('')}
                     </ul>
                     <div class="offer-cta mt-4">
-                        <a href="#contact" class="btn btn-coral w-100">Commander<i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn btn-coral w-100">Commander<span class="ms-2">${icons.arrowRight}</span></a>
                     </div>
                 </div>
             </article>
@@ -360,17 +398,49 @@ function renderOffers(items) {
 }
 
 function renderProjects(items) {
-    return items.map(p => `
+    return items.map((p, idx) => {
+        const head = `
+            <div class="d-flex align-items-center justify-content-between gap-2">
+                <span class="icon-box ${softTints[p.color] || 'soft-violet'}"><span class="${p.color}">${icons[p.icon] || ''}</span></span>
+                <span class="offer-badge ${softTints[p.color] || 'soft-violet'} ${p.color}">${p.tag}</span>
+            </div>`;
+
+        const media = (p.images && p.images.length) ? `
+            <div class="project-media">
+                <span class="offer-badge ${softTints[p.color] || 'soft-violet'} ${p.color}">${p.tag}</span>
+                <div id="proj-carousel-${idx}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="hover">
+                    <div class="carousel-inner">
+                        ${p.images.map((img, i) => `
+                        <div class="carousel-item${i === 0 ? ' active' : ''}">
+                            <img src="${img}" alt="${p.name} — vue ${i + 1}" ${i === 0 ? '' : 'loading="lazy"'}>
+                        </div>`).join('')}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#proj-carousel-${idx}" data-bs-slide="prev" aria-label="Capture précédente de ${p.name}"></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#proj-carousel-${idx}" data-bs-slide="next" aria-label="Capture suivante de ${p.name}"></button>
+                </div>
+            </div>` : '';
+
+        const cta = p.url
+            ? `<a href="${p.url}" target="_blank" rel="noopener" class="btn btn-brand w-100">Visiter le site<span class="ms-2">${icons.arrowRight}</span></a>`
+            : `<a href="https://wa.me/237698385186?text=${encodeURIComponent(`Bonjour Texefa, je souhaite en savoir plus sur ${p.name}.`)}" target="_blank" rel="noopener" class="btn btn-outline-violet w-100">
+                <span class="text-wa me-2">${icons.whatsapp}</span>Discuter de ce projet
+            </a>`;
+
+        return `
         <div class="col-md-4 d-flex" data-reveal>
             <article class="project-card w-100">
-                <div class="d-flex align-items-center justify-content-between gap-2">
-                    <span class="icon-box ${softTints[p.color] || 'soft-violet'}"><i class="${p.icon} ${p.color}" aria-hidden="true"></i></span>
-                    <span class="offer-badge ${softTints[p.color] || 'soft-violet'} ${p.color}">${p.tag}</span>
+                ${media}
+                <div class="project-body d-flex flex-column">
+                    ${p.images ? '' : head}
+                    <h3 class="h4 fw-bold mt-3 mb-1 font-display">${p.name}</h3>
+                    <p class="text-body-secondary small mb-0">${p.desc}</p>
+                    <div class="mt-4">
+                        ${cta}
+                    </div>
                 </div>
-                <h3 class="h4 fw-bold mt-3 mb-1 font-display">${p.name}</h3>
-                <p class="text-body-secondary small mb-0">${p.desc}</p>
             </article>
-        </div>`).join('');
+        </div>`;
+    }).join('');
 }
 
 /* ---------------- Montage ---------------- */
@@ -554,7 +624,7 @@ contactForm.addEventListener('submit', (e) => {
         contactForm.reset();
         contactStatus.innerHTML = `
             <div class="alert alert-success d-flex align-items-center gap-2 mb-0" role="alert">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>${icons.check}</span>
                 <span>Merci ! L'équipe Texefa vous répondra très rapidement.</span>
             </div>`;
         setTimeout(() => { contactStatus.innerHTML = ''; }, 6000);
