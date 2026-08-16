@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://texefa.com/sitemap.xml

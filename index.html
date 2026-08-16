@@ -1,458 +1,430 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-bs-theme="auto">
 <head>
     <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texefa - Votre Partenaire Innovation & Savoir</title>
-    <meta name="description" content="Texefa, entreprise basée à Yaoundé et Casablanca, offre des services d'Academy, de rédaction scientifique, d'édition et de développement IT & IA. Découvrez nos expertises.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Texefa — Academy, Édition scientifique, IT & IA | Yaoundé · Casablanca</title>
+    <meta name="description" content="Texefa développe sites web et solutions innovantes, et accompagne institutions, chercheurs et entreprises : Academy, édition scientifique, IT & IA. Yaoundé · Casablanca.">
+    <meta name="keywords" content="Texefa, sites web, e-commerce, développement web, Academy, formation IA, scientific writing, édition scientifique, développement IT, intelligence artificielle, Yaoundé, Casablanca, Cameroun, Maroc">
+    <meta name="author" content="Texefa">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://texefa.com/">
+    <meta name="theme-color" content="#2c0674">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Texefa">
+    <meta property="og:title" content="Texefa — Innovation, éducation & technologie, entre Yaoundé et Casablanca">
+    <meta property="og:description" content="Academy, services éditoriaux & scientifiques, développement IT & IA : Texefa accompagne institutions, chercheurs et entreprises.">
+    <meta property="og:url" content="https://texefa.com/">
+    <meta property="og:image" content="https://picsum.photos/seed/texefa-og/1200/630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Texefa — Innovation, éducation & technologie">
+    <meta name="twitter:description" content="Academy, édition scientifique et développement IT & IA, entre Yaoundé et Casablanca.">
+    <meta name="twitter:image" content="https://picsum.photos/seed/texefa-og/1200/630">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232c0674'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'>T</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --blue: #2b6cb0;
-            --green: #2f855a;
-            --purple: #805ad5;
-            --orange: #ed8936;
-            --red: #e53e3e;
-            --dark: #1a202c;
-        }
-        body { font-family: 'Inter', sans-serif; color: var(--dark); }
-        .font-display { font-family: 'Playfair Display', serif; }
-        .text-blue { color: var(--blue); }
-        .text-green { color: var(--green); }
-        .text-purple { color: var(--purple); }
-        .text-orange { color: var(--orange); }
-        .text-red { color: var(--red); }
-        .bg-blue { background-color: var(--blue); }
-        .bg-green { background-color: var(--green); }
-        .bg-purple { background-color: var(--purple); }
-        .bg-orange { background-color: var(--orange); }
-        .bg-red { background-color: var(--red); }
-        .gradient-hero {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 50%, var(--orange) 100%);
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, var(--blue), var(--purple), var(--orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .shadow-card { box-shadow: 0 4px 20px rgba(26, 32, 44, 0.08); }
-        .shadow-card:hover { box-shadow: 0 8px 30px rgba(26, 32, 44, 0.15); }
-        .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-card:hover { transform: translateY(-6px); }
-        .accordion-item { border-bottom: 1px solid #e2e8f0; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .accordion-content.open { max-height: 500px; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="top" class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="#hero" class="flex items-center space-x-2">
-                <span class="text-3xl font-extrabold tracking-tight">
-                    <span class="text-blue">T</span><span class="text-green">E</span><span class="text-purple">X</span><span class="text-orange">E</span><span class="text-red">F</span><span class="text-blue">A</span>
-                </span>
-            </a>
-            <nav aria-label="Navigation principale">
-                <ul id="nav-list" class="hidden md:flex space-x-6 text-sm font-semibold text-gray-700"></ul>
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none" aria-label="Menu mobile">
-                    <i class="fas fa-bars text-xl"></i>
+    <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header id="top" class="position-sticky top-0 z-3">
+        <nav class="navbar navbar-expand-lg" aria-label="Navigation principale">
+            <div class="container">
+                <a href="#hero" class="navbar-brand d-flex align-items-center py-2">
+                    <span class="brand-logo text-gradient" aria-label="Texefa">TEXEFA</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            </nav>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <ul id="mobile-nav-list" class="flex flex-col space-y-3 px-4 py-4"></ul>
-        </div>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul id="nav-list" class="navbar-nav mx-auto gap-lg-2"></ul>
+                    <a href="#contact" class="btn btn-brand btn-sm px-3 my-2 my-lg-0 text-nowrap">
+                        <i class="fa-solid fa-paper-plane me-2 d-none d-sm-inline"></i>Nous contacter
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <!-- HERO -->
-        <section id="hero" class="pt-28 pb-16 gradient-hero text-white">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/2 text-center md:text-left">
-                    <p class="inline-block bg-white/20 px-3 py-1 rounded-full text-sm font-medium mb-4">Yaoundé • Casablanca</p>
-                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Votre partenaire <span class="font-display italic">innovation & savoir</span></h1>
-                    <p class="mt-5 text-lg text-white/90 leading-relaxed">Texefa est une entreprise panafricaine qui conjugue excellence académique, rigueur scientifique et agilité technologique. Nous accompagnons les institutions, les chercheurs et les entreprises dans leurs projets de formation, de publication scientifique et de transformation numérique.</p>
-                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="#services" class="inline-block bg-white text-blue px-8 py-3 rounded-lg font-bold shadow hover:bg-gray-100 transition">Découvrir nos services</a>
-                        <a href="#contact" class="inline-block border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue transition">Nous contacter</a>
+    <main id="main">
+        <!-- ===== HERO ===== -->
+        <section id="hero" class="hero position-relative overflow-hidden" aria-label="Présentation">
+            <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+            <div class="hero-grain" aria-hidden="true"></div>
+
+            <div class="container position-relative">
+                <div class="row align-items-center g-5 min-vh-100 py-6">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <p class="pill-badge hero-item" style="--d:0ms"><i class="fa-solid fa-location-dot me-2"></i>Yaoundé • Casablanca</p>
+                        <h1 class="h1-hero hero-item text-white" style="--d:120ms">
+                            Votre partenaire <span class="font-display fst-italic">innovation</span> <span class="font-display fst-italic">&</span> <span class="font-display fst-italic">savoir</span>
+                        </h1>
+                        <p class="hero-lede hero-item text-white-50" style="--d:240ms">
+                            Nous accompagnons institutions, chercheurs et entreprises : formation, publication scientifique et transformation numérique.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mt-4 hero-item" style="--d:360ms">
+                            <a href="#services" class="btn btn-light btn-lg btn-shine px-4 fw-semibold text-violet-deep">
+                                Découvrir nos services
+                                <i class="fa-solid fa-arrow-down ms-2" aria-hidden="true"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg px-4 fw-semibold">
+                                Nous contacter
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="https://picsum.photos/600/450?random=1" alt="Équipe Texefa collaborant dans un espace moderne" class="rounded-2xl shadow-2xl w-full" loading="lazy">
+
+                    <div class="col-lg-6 hero-item" style="--d:480ms">
+                        <div id="hero-carousel" class="c3d-stage mx-auto" role="region" aria-roledescription="carrousel" aria-label="Nos expertises en avant-première">
+                            <div class="c3d-track" id="c3d-track"></div>
+                            <button class="c3d-nav c3d-prev" id="c3d-prev" type="button" aria-label="Diapositive précédente">
+                                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="c3d-nav c3d-next" id="c3d-next" type="button" aria-label="Diapositive suivante">
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                            <div class="c3d-dots" id="c3d-dots" role="tablist" aria-label="Choisir une diapositive"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- À PROPOS -->
-        <section id="a-propos" class="py-20 bg-white">
-            <div class="container mx-auto px-4 max-w-5xl">
-                <div class="text-center">
-                    <p class="text-sm font-bold tracking-widest uppercase text-purple">À propos</p>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-800">Une vision, deux continents</h2>
+        <!-- ===== BANDEAU EXPERTISES ===== -->
+        <div class="marquee py-4 border-bottom" aria-label="Domaines d'expertise">
+            <div class="marquee-track">
+                <span>Academy</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Scientific Writing</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Édition scientifique</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Intelligence Artificielle</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Data Science</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Développement web &amp; mobile</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>EdTech</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Conseil d'indexation</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+            </div>
+            <div class="marquee-track" aria-hidden="true">
+                <span>Academy</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Scientific Writing</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Édition scientifique</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Intelligence Artificielle</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Data Science</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Développement web &amp; mobile</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>EdTech</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+                <span>Conseil d'indexation</span><i class="fa-solid fa-star-of-life" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <!-- ===== À PROPOS ===== -->
+        <section id="a-propos" class="section section-surface" aria-label="À propos de Texefa">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6" data-reveal>
+                        <h2 class="h2-title">Une vision, <span class="font-display fst-italic text-gradient">deux continents</span></h2>
+                        <p class="lead text-body mt-4" style="max-width: 34rem;">
+                            Présente à <strong>Yaoundé</strong> et <strong>Casablanca</strong>, Texefa est née d'une conviction : le savoir et la technologie sont les leviers les plus puissants pour bâtir l'avenir de l'Afrique et du monde.
+                        </p>
+                        <p class="text-body-secondary mt-3" style="max-width: 34rem;">
+                            D'un côté l'excellence académique et la rigueur scientifique, de l'autre l'agilité technologique — nous réunissons les deux au service de vos projets.
+                        </p>
+                        <a href="#services" class="btn btn-brand mt-4 px-4">
+                            Explorer nos expertises <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="pillar-list" data-reveal-group>
+                            <div class="pillar" data-reveal>
+                                <span class="pillar-num text-violet" aria-hidden="true">01</span>
+                                <div>
+                                    <h3 class="h5 fw-bold mb-1"><i class="fa-solid fa-graduation-cap me-2 text-violet" aria-hidden="true"></i>Formation &amp; Académie</h3>
+                                    <p class="text-body-secondary small mb-0">IA, IT, rédaction scientifique et certifications pour les talents d'aujourd'hui et de demain.</p>
+                                </div>
+                            </div>
+                            <div class="pillar" data-reveal>
+                                <span class="pillar-num text-mauve" aria-hidden="true">02</span>
+                                <div>
+                                    <h3 class="h5 fw-bold mb-1"><i class="fa-solid fa-pen-nib me-2 text-mauve" aria-hidden="true"></i>Édition &amp; Recherche</h3>
+                                    <p class="text-body-secondary small mb-0">Publication, création de revues et organisation de conférences scientifiques.</p>
+                                </div>
+                            </div>
+                            <div class="pillar" data-reveal>
+                                <span class="pillar-num text-coral" aria-hidden="true">03</span>
+                                <div>
+                                    <h3 class="h5 fw-bold mb-1"><i class="fa-solid fa-code me-2 text-coral" aria-hidden="true"></i>IT &amp; Intelligence Artificielle</h3>
+                                    <p class="text-body-secondary small mb-0">Applications, data science, IA générative et solutions EdTech sur mesure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-10 grid md:grid-cols-3 gap-8">
-                    <div class="text-center p-6 rounded-xl bg-gray-50 shadow-card">
-                        <i class="fas fa-graduation-cap text-4xl text-blue"></i>
-                        <h3 class="mt-4 text-lg font-bold text-gray-800">Formation & Académie</h3>
-                        <p class="mt-2 text-gray-600 text-sm">Nous formons les talents d'aujourd'hui et de demain dans les domaines porteurs : IA, IT, rédaction scientifique et certifications.</p>
-                    </div>
-                    <div class="text-center p-6 rounded-xl bg-gray-50 shadow-card">
-                        <i class="fas fa-pen-nib text-4xl text-green"></i>
-                        <h3 class="mt-4 text-lg font-bold text-gray-800">Édition & Recherche</h3>
-                        <p class="mt-2 text-gray-600 text-sm">Nous accompagnons chercheurs et institutions dans la publication, la création de revues et l'organisation de conférences scientifiques.</p>
-                    </div>
-                    <div class="text-center p-6 rounded-xl bg-gray-50 shadow-card">
-                        <i class="fas fa-code text-4xl text-orange"></i>
-                        <h3 class="mt-4 text-lg font-bold text-gray-800">IT & Intelligence Artificielle</h3>
-                        <p class="mt-2 text-gray-600 text-sm">Nous développons des solutions numériques sur mesure : applications, data science, IA générative et solutions EdTech.</p>
-                    </div>
+
+                <div id="stats-row" class="stats-row" data-reveal-group aria-label="Texefa en chiffres"></div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES ===== -->
+        <section id="services" class="section section-soft" aria-label="Nos services">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width: 42rem;" data-reveal>
+                    <p class="eyebrow text-coral mt-0">Nos expertises</p>
+                    <h2 class="h2-title">Des services complets, pensés sur mesure</h2>
+                    <p class="text-body-secondary mt-3">Chaque accompagnement est conçu pour répondre à vos besoins précis, avec une exigence constante de qualité et d'impact.</p>
                 </div>
-                <div class="mt-12 text-center">
-                    <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">Présente à <strong>Yaoundé (Cameroun)</strong> et <strong>Casablanca (Maroc)</strong>, Texefa est née de la conviction que le savoir et la technologie sont les leviers les plus puissants pour bâtir l'avenir de l'Afrique et du monde.</p>
+                <div id="service-grid" class="row g-4 mt-2 align-items-stretch" data-reveal-group></div>
+            </div>
+        </section>
+
+        <!-- ===== OFFRES WEB (flyer) ===== -->
+        <section id="offres" class="section section-surface" aria-label="Nos offres de développement web">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width: 44rem;" data-reveal>
+                    <p class="eyebrow text-violet mt-0">Sites web &amp; solutions innovantes</p>
+                    <h2 class="h2-title">Développez votre <span class="font-display fst-italic text-gradient">présence digitale</span></h2>
+                    <p class="text-body-secondary mt-3">Entrepreneur, commerçant, étudiant ou entreprise : des offres adaptées à tous les budgets, pour lancer votre activité en ligne dès aujourd'hui.</p>
+                </div>
+
+                <div class="promo-banner mt-4" data-reveal>
+                    <span class="promo-30" aria-hidden="true">-30% OFF</span>
+                    <span class="promo-text">Promotion sur toutes nos offres de développement web — jusqu'à épuisement.</span>
+                    <a href="#contact" class="btn btn-light btn-sm fw-semibold text-violet-deep px-3">Découvrir nos offres dès maintenant</a>
+                </div>
+
+                <div id="offers-grid" class="row g-4 mt-3" data-reveal-group></div>
+
+                <div class="text-center mt-5" data-reveal>
+                    <p class="text-body-secondary small mb-3">Les tarifs annoncés correspondent à ceux de notre brochure officielle.</p>
+                    <a href="flyer.jpeg" download="Texefa-brochure.jpeg" class="btn btn-outline-violet btn-lg px-4">
+                        <i class="fa-solid fa-file-arrow-down me-2" aria-hidden="true"></i>Télécharger notre brochure
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES DÉTAILLÉS -->
-        <section id="services" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center">
-                    <p class="text-sm font-bold tracking-widest uppercase text-orange">Nos expertises</p>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-800">Des services complets et sur mesure</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Chaque service est conçu pour répondre aux besoins spécifiques de nos clients, avec une approche centrée sur la qualité, l'innovation et l'impact.</p>
+        <!-- ===== RÉALISATIONS ===== -->
+        <section id="realisations" class="section section-soft" aria-label="Nos réalisations">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width: 44rem;" data-reveal>
+                    <p class="eyebrow text-mauve mt-0">Nos produits déjà développés</p>
+                    <h2 class="h2-title">Des solutions <span class="font-display fst-italic text-gradient">concrètes</span></h2>
+                    <p class="text-body-secondary mt-3">Chaque réalisation répond à un besoin réel — formation, conférence ou communication d'équipe.</p>
                 </div>
-                <div id="service-grid" class="mt-12 grid gap-8 lg:grid-cols-3"></div>
+                <div id="projects-grid" class="row g-4 mt-2" data-reveal-group></div>
             </div>
         </section>
 
-        <!-- TÉMOIGNAGES -->
-        <section id="temoignages" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center">
-                    <p class="text-sm font-bold tracking-widest uppercase text-green">Ils nous font confiance</p>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-800">Témoignages</h2>
+        <!-- ===== INVESTISSEMENT ===== -->
+        <section id="investissement" class="section section-invest text-white overflow-hidden" aria-label="Axes d'investissement de Texefa">
+            <div class="hero-grain opacity-25" aria-hidden="true"></div>
+            <div class="container position-relative">
+                <div class="row g-5 align-items-end mb-5">
+                    <div class="col-lg-8" data-reveal>
+                        <h2 class="h2-title text-white">Texefa Invest <span class="font-display fst-italic text-white-50">: demain, nous irons plus loin</span></h2>
+                        <p class="text-white-50 mt-3 mb-0" style="max-width: 40rem;">Quatre secteurs à fort impact viendront compléter notre offre dans les prochaines années.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end" data-reveal>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4">Discuter d'un projet <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                    </div>
                 </div>
-                <div id="testimonial-grid" class="mt-12 grid md:grid-cols-3 gap-8"></div>
+                <div id="future-grid" class="row g-4" data-reveal-group></div>
             </div>
         </section>
 
-        <!-- AXES D'INVESTISSEMENT -->
-        <section id="investissement" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center">
-                    <p class="text-sm font-bold tracking-widest uppercase text-red">Perspectives</p>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-800">Texefa Invest : demain, nous irons plus loin</h2>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Texefa prépare activement son expansion dans de nouveaux secteurs à fort impact. Ces axes viendront compléter notre offre existante dans les prochaines années.</p>
+        <!-- ===== TÉMOIGNAGES ===== -->
+        <section id="temoignages" class="section section-surface" aria-label="Témoignages de nos clients">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width: 42rem;" data-reveal>
+                    <h2 class="h2-title">Ils nous font <span class="font-display fst-italic text-gradient">confiance</span></h2>
+                    <p class="text-body-secondary mt-3">Chercheurs, institutions et entreprises partagent leur expérience avec Texefa.</p>
                 </div>
-                <div id="future-grid" class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+                <div id="testimonial-grid" class="row g-4 mt-2 align-items-stretch" data-reveal-group></div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="py-20 bg-white">
-            <div class="container mx-auto px-4 max-w-6xl">
-                <div class="text-center">
-                    <p class="text-sm font-bold tracking-widest uppercase text-blue">Contact</p>
-                    <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-800">Parlons de votre projet</h2>
-                </div>
-                <div class="mt-12 grid md:grid-cols-2 gap-10">
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-blue/10 p-3 rounded-lg"><i class="fas fa-map-marker-alt text-blue text-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-gray-800">Nos bureaux</h3>
-                                <p class="text-gray-600 text-sm mt-1">Yaoundé, Cameroun<br>Casablanca, Maroc</p>
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section section-soft" aria-label="Contact">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5" data-reveal>
+                        <p class="eyebrow text-violet mt-0">Contact</p>
+                        <h2 class="h2-title">Parlons de votre projet</h2>
+                        <p class="text-body-secondary mt-3 mb-4">Une réponse sous 48 h ouvrées, depuis Yaoundé ou Casablanca.</p>
+                        <div class="contact-info">
+                            <div class="row align-items-center g-3" data-reveal>
+                                <div class="col-auto"><span class="icon-box soft-violet"><i class="fa-solid fa-map-location-dot text-violet"></i></span></div>
+                                <div class="col">
+                                    <h3 class="h6 fw-bold mb-0">Nos bureaux</h3>
+                                    <p class="text-body-secondary small mb-0">Yaoundé, Cameroun<br>Casablanca, Maroc</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-green/10 p-3 rounded-lg"><i class="fas fa-phone-alt text-green text-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-gray-800">Téléphone</h3>
-                                <p class="text-gray-600 text-sm mt-1">+237 6 00 00 00 00<br>+212 6 00 00 00 00</p>
+                            <div class="row align-items-center g-3" data-reveal>
+                                <div class="col-auto"><span class="icon-box soft-coral"><i class="fa-solid fa-phone text-coral"></i></span></div>
+                                <div class="col">
+                                    <h3 class="h6 fw-bold mb-0">Appels &amp; WhatsApp</h3>
+                                    <p class="text-body-secondary small mb-0">+237 698 38 51 86<br>+237 697 64 69 78</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-purple/10 p-3 rounded-lg"><i class="fas fa-envelope text-purple text-xl"></i></div>
-                            <div>
-                                <h3 class="font-bold text-gray-800">Email</h3>
-                                <p class="text-gray-600 text-sm mt-1">contact@texefa.com</p>
+                            <div class="row align-items-center g-3" data-reveal>
+                                <div class="col-auto"><span class="icon-box soft-mauve"><i class="fa-solid fa-envelope text-mauve"></i></span></div>
+                                <div class="col">
+                                    <h3 class="h6 fw-bold mb-0">Email</h3>
+                                    <p class="text-body-secondary small mb-0"><a href="mailto:contact@texefa.com" class="link-brand">contact@texefa.com</a></p>
+                                </div>
+                            </div>
+                            <div class="mt-2" data-reveal>
+                                <a href="https://wa.me/237698385186" target="_blank" rel="noopener" class="btn btn-coral px-4">
+                                    <i class="fa-brands fa-whatsapp me-2" aria-hidden="true"></i>Discuter sur WhatsApp
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <form id="contact-form" class="space-y-4 bg-gray-50 p-6 rounded-xl shadow-card">
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="name" class="sr-only">Nom complet</label>
-                                <input type="text" id="name" placeholder="Nom complet" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-transparent">
+
+                    <div class="col-lg-7" data-reveal>
+                        <form id="contact-form" class="card card-lift p-4 p-md-5 rounded-4 border-0" novalidate>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Nom complet <span class="text-danger" aria-hidden="true">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="Votre nom" autocomplete="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Adresse email <span class="text-danger" aria-hidden="true">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="vous@exemple.com" autocomplete="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Sujet de votre demande</label>
+                                    <select id="subject" name="subject" class="form-select form-select-lg">
+                                        <option>Academy &amp; Formation</option>
+                                        <option>Services éditoriaux &amp; scientifiques</option>
+                                        <option>Développement IT &amp; IA</option>
+                                        <option>Investissement</option>
+                                        <option>Autre demande</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Votre message <span class="text-danger" aria-hidden="true">*</span></label>
+                                    <textarea id="message" name="message" rows="5" class="form-control" placeholder="Décrivez votre besoin en quelques lignes…" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" id="contact-submit" class="btn btn-brand btn-lg btn-shine w-100">
+                                        <span class="btn-label"><i class="fa-solid fa-paper-plane me-2" aria-hidden="true"></i>Envoyer le message</span>
+                                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    </button>
+                                    <div id="contact-status" class="mt-3" role="status" aria-live="polite"></div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="email" class="sr-only">Adresse email</label>
-                                <input type="email" id="email" placeholder="Adresse email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-transparent">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="subject" class="sr-only">Sujet</label>
-                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-transparent">
-                                <option>Academy & Formation</option>
-                                <option>Services éditoriaux & scientifiques</option>
-                                <option>Développement IT & IA</option>
-                                <option>Autre demande</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea id="message" rows="5" placeholder="Votre message..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit" class="w-full gradient-hero text-white py-3 rounded-lg font-bold hover:opacity-90 transition">Envoyer le message</button>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-1">
-                    <span class="text-3xl font-extrabold">
-                        <span class="text-blue">T</span><span class="text-green">E</span><span class="text-purple">X</span><span class="text-orange">E</span><span class="text-red">F</span><span class="text-blue">A</span>
-                    </span>
-                    <p class="mt-3 text-sm text-gray-400">Innovation, formation et technologies pour bâtir l'avenir.</p>
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer text-white-50 pt-5 pb-4" aria-label="Pied de page">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <span class="brand-logo brand-logo-lg text-gradient" aria-label="Texefa">TEXEFA</span>
+                    <p class="mt-3 small" style="max-width: 22rem;">Innovons pour simplifier le quotidien — présence digitale, formation et technologies, entre Yaoundé et Casablanca.</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="https://wa.me/237698385186" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="font-semibold text-white mb-3">Navigation</h3>
-                    <ul id="footer-nav" class="space-y-2 text-sm"></ul>
+                <div class="col-6 col-lg-2">
+                    <h3 class="h6 fw-bold text-white mb-3">Navigation</h3>
+                    <ul id="footer-nav" class="list-unstyled footer-links"></ul>
                 </div>
-                <div>
-                    <h3 class="font-semibold text-white mb-3">Nos services</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Academy</li>
-                        <li>Services éditoriaux</li>
-                        <li>Développement IT & IA</li>
+                <div class="col-6 col-lg-3">
+                    <h3 class="h6 fw-bold text-white mb-3">Nos services</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#services" class="footer-link">Academy &amp; certifications</a></li>
+                        <li><a href="#services" class="footer-link">Édition scientifique</a></li>
+                        <li><a href="#services" class="footer-link">Développement IT &amp; IA</a></li>
+                        <li><a href="#investissement" class="footer-link">Texefa Invest</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="font-semibold text-white mb-3">Newsletter</h3>
-                    <p class="text-sm text-gray-400">Recevez nos actualités et opportunités.</p>
-                    <form class="mt-3 flex">
-                        <input type="email" placeholder="Votre email" class="flex-1 px-3 py-2 rounded-l-lg bg-gray-800 text-white focus:outline-none">
-                        <button class="bg-blue px-4 py-2 rounded-r-lg text-white hover:bg-blue-700 transition" aria-label="S'inscrire"><i class="fas fa-paper-plane"></i></button>
+                <div class="col-lg-3">
+                    <h3 class="h6 fw-bold text-white mb-3">Newsletter</h3>
+                    <p class="small">Recevez nos actualités et opportunités, une fois par mois.</p>
+                    <form id="newsletter-form" class="mt-3" novalidate>
+                        <div class="input-group">
+                            <label for="newsletter-email" class="visually-hidden">Adresse email</label>
+                            <input type="email" id="newsletter-email" class="form-control" placeholder="Votre email" autocomplete="email" required>
+                            <button type="submit" class="btn btn-brand px-3" aria-label="S'inscrire à la newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                        <p id="newsletter-status" class="small mt-2 mb-0" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2025 Texefa. Tous droits réservés.</p>
-                <div class="flex space-x-4 mt-2 md:mt-0">
-                    <a href="#" class="hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="hover:text-white transition" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 pt-4 mt-5 border-top border-white-10 small">
+                <p class="mb-0">© 2025 Texefa. Tous droits réservés.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link">Mentions légales</a>
+                    <a href="#" class="footer-link">Confidentialité</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // DATA LAYER
-        const navItems = [
-            { label: "Accueil", href: "#hero" },
-            { label: "À propos", href: "#a-propos" },
-            { label: "Services", href: "#services" },
-            { label: "Témoignages", href: "#temoignages" },
-            { label: "Investir", href: "#investissement" },
-            { label: "Contact", href: "#contact" }
-        ];
+    <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-        const serviceCards = [
-            {
-                title: "Academy",
-                tagColor: "text-blue",
-                icon: "fas fa-graduation-cap",
-                image: "https://picsum.photos/500/350?random=10",
-                alt: "Formation en ligne et en présentiel",
-                intro: "Notre académie forme la prochaine génération de leaders et de spécialistes. Nous proposons des programmes intensifs, pratiques et certifiants, adaptés aux besoins du marché.",
-                points: [
-                    "Promotion et représentation d'écoles",
-                    "Formation en Intelligence Artificielle",
-                    "Formation en Scientific Writing",
-                    "Formation IT & Développement",
-                    "Certifications informatiques internationales",
-                    "Ateliers et bootcamps intensifs"
-                ],
-                extra: "Nos formations sont animées par des experts de terrain et s'appuient sur des cas concrets."
-            },
-            {
-                title: "Services éditoriaux & scientifiques",
-                tagColor: "text-green",
-                icon: "fas fa-feather-alt",
-                image: "https://picsum.photos/500/350?random=20",
-                alt: "Rédaction et édition scientifique",
-                intro: "Nous sommes un partenaire de confiance pour les chercheurs, les institutions académiques et les éditeurs. Nous garantissons la qualité, la rigueur et la visibilité de vos publications.",
-                points: [
-                    "Scientific Writing & Coaching Publication",
-                    "Édition scientifique et relecture",
-                    "Gestion éditoriale complète",
-                    "Création de journaux scientifiques",
-                    "Conseil d'indexation des revues (Scopus, WoS...)",
-                    "Organisation de conférences scientifiques"
-                ],
-                extra: "Nous accompagnons vos projets de la conception à la diffusion internationale."
-            },
-            {
-                title: "Développement IT & IA",
-                tagColor: "text-orange",
-                icon: "fas fa-code",
-                image: "https://picsum.photos/500/350?random=30",
-                alt: "Développement logiciel et intelligence artificielle",
-                intro: "Notre équipe technique conçoit des solutions numériques robustes et innovantes. Nous transformons vos idées en produits digitaux performants et évolutifs.",
-                points: [
-                    "Développement d'applications et sites web",
-                    "Analyse de données et data science",
-                    "Création de dashboards interactifs",
-                    "Développement de solutions IA",
-                    "Solutions agentiques & GenAI",
-                    "Développement EdTech"
-                ],
-                extra: "Nous intervenons de la conception à la maintenance, avec des technologies de pointe."
-            }
-        ];
+    <a href="https://wa.me/237698385186" target="_blank" rel="noopener" id="wa-float" class="wa-float" aria-label="Discuter sur WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
 
-        const testimonials = [
-            {
-                name: "Dr. Marie N.",
-                role: "Chercheuse, Yaoundé",
-                text: "Grâce à Texefa, j'ai pu publier mes travaux dans une revue indexée. Leur coaching en scientific writing a été d'une aide précieuse et professionnelle.",
-                avatar: "https://picsum.photos/100/100?random=40"
-            },
-            {
-                name: "Karim B.",
-                role: "Directeur d'école, Casablanca",
-                text: "Texefa nous a accompagnés dans la création de notre plateforme EdTech. Une équipe à l'écoute, créative et très professionnelle.",
-                avatar: "https://picsum.photos/100/100?random=41"
-            },
-            {
-                name: "Awa S.",
-                role: "Responsable RH, Douala",
-                text: "Les formations de Texefa ont boosté les compétences de nos équipes en IA. Des programmes concrets et directement applicables.",
-                avatar: "https://picsum.photos/100/100?random=42"
-            }
-        ];
-
-        const futureCards = [
-            { title: "Immobilier", icon: "fas fa-building", desc: "Investissements, promotion et gestion de projets immobiliers résidentiels et commerciaux.", color: "text-blue" },
-            { title: "Import & Export", icon: "fas fa-ship", desc: "Commerce international, sourcing et logistique entre l'Afrique, l'Europe et l'Asie.", color: "text-green" },
-            { title: "Agriculture", icon: "fas fa-seedling", desc: "Projets agricoles modernes et durables, avec un focus sur la productivité et l'impact social.", color: "text-orange" },
-            { title: "Agro-industrie", icon: "fas fa-industry", desc: "Transformation locale des produits agricoles et création de valeur ajoutée.", color: "text-red" }
-        ];
-
-        const footerNav = [
-            { label: "Accueil", href: "#hero" },
-            { label: "À propos", href: "#a-propos" },
-            { label: "Services", href: "#services" },
-            { label: "Contact", href: "#contact" }
-        ];
-
-        // RENDER FUNCTIONS
-        function renderNav(items) {
-            return items.map(i => `<li><a href="${i.href}" class="hover:text-blue transition">${i.label}</a></li>`).join('');
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Texefa",
+        "url": "https://texefa.com/",
+        "slogan": "Innovons pour simplifier le quotidien",
+        "description": "Texefa accompagne institutions, chercheurs et entreprises : sites web et solutions innovantes, Academy et certifications, services éditoriaux et scientifiques, développement IT et IA.",
+        "address": [
+            { "@type": "PostalAddress", "addressLocality": "Yaoundé", "addressCountry": "CM" },
+            { "@type": "PostalAddress", "addressLocality": "Casablanca", "addressCountry": "MA" }
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": ["+237 698 38 51 86", "+237 697 64 69 78"],
+            "email": "contact@texefa.com",
+            "availableLanguage": ["fr"]
         }
-
-        function renderServiceCards(items) {
-            return items.map(item => {
-                const pointsHtml = item.points.map(p => `<li><i class="fas fa-check-circle ${item.tagColor} mr-2"></i>${p}</li>`).join('');
-                return `
-                    <article class="service-card bg-white rounded-2xl shadow-card overflow-hidden border border-gray-200">
-                        <div class="relative">
-                            <img src="${item.image}" alt="${item.alt}" class="w-full h-52 object-cover" loading="lazy">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-bold ${item.tagColor} shadow">
-                                <i class="${item.icon} mr-1"></i>${item.title.split(' ')[0]}
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800">${item.title}</h3>
-                            <p class="mt-3 text-gray-600 text-sm leading-relaxed">${item.intro}</p>
-                            <ul class="mt-4 space-y-2 text-sm text-gray-700">${pointsHtml}</ul>
-                            <p class="mt-4 text-xs italic text-gray-500 bg-gray-50 p-3 rounded-lg">${item.extra}</p>
-                        </div>
-                    </article>
-                `;
-            }).join('');
-        }
-
-        function renderTestimonials(items) {
-            return items.map(item => `
-                <figure class="bg-gray-50 rounded-2xl p-6 shadow-card">
-                    <div class="flex items-center gap-1 text-red mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <blockquote class="text-gray-700 text-sm leading-relaxed">"${item.text}"</blockquote>
-                    <figcaption class="mt-5 flex items-center gap-3">
-                        <img src="${item.avatar}" alt="Photo de ${item.name}" class="w-12 h-12 rounded-full object-cover" loading="lazy">
-                        <div>
-                            <p class="font-bold text-gray-800 text-sm">${item.name}</p>
-                            <p class="text-gray-500 text-xs">${item.role}</p>
-                        </div>
-                    </figcaption>
-                </figure>
-            `).join('');
-        }
-
-        function renderFutureCards(items) {
-            return items.map(item => `
-                <div class="bg-white rounded-xl p-6 text-center border border-gray-200 shadow-card hover:shadow-lg transition">
-                    <i class="${item.icon} text-4xl ${item.color} mb-3"></i>
-                    <h3 class="font-bold text-lg text-gray-800">${item.title}</h3>
-                    <p class="text-gray-600 text-sm mt-2 leading-relaxed">${item.desc}</p>
-                </div>
-            `).join('');
-        }
-
-        function renderFooterNav(items) {
-            return items.map(i => `<li><a href="${i.href}" class="hover:text-white transition">${i.label}</a></li>`).join('');
-        }
-
-        // MOUNT
-        document.getElementById('nav-list').innerHTML = renderNav(navItems);
-        document.getElementById('mobile-nav-list').innerHTML = renderNav(navItems);
-        document.getElementById('service-grid').innerHTML = renderServiceCards(serviceCards);
-        document.getElementById('testimonial-grid').innerHTML = renderTestimonials(testimonials);
-        document.getElementById('future-grid').innerHTML = renderFutureCards(futureCards);
-        document.getElementById('footer-nav').innerHTML = renderFooterNav(footerNav);
-
-        // MOBILE MENU
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        // EVENT DELEGATION
-        document.addEventListener('click', function(e) {
-            const link = e.target.closest('a[href^="#"]');
-            if (!link) return;
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
-        });
-
-        // CONTACT FORM
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre message ! L\'équipe Texefa vous répondra très rapidement.');
-            this.reset();
-        });
-
-        // NEWSLETTER
-        document.querySelector('footer form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre inscription à la newsletter !');
-            this.reset();
-        });
+    }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Texefa",
+        "url": "https://texefa.com/",
+        "inLanguage": "fr-FR"
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
