@@ -6,9 +6,6 @@ const S = (stroke, fill = "none") =>
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="${fill}" ${fill === "none" ? `stroke="${stroke}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"` : ""} aria-hidden="true">`;
 
 const icons = {
-    cap: S("currentColor") + `<path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
-    feather: S("currentColor") + `<path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"></path><path d="m2 2 7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>`,
-    code: S("currentColor") + `<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
     building: S("currentColor") + `<rect x="4" y="2" width="16" height="20" rx="0"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"></path></svg>`,
     ship: S("currentColor") + `<path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path><path d="M12 10v4"></path><path d="M12 2v3"></path></svg>`,
     seedling: S("currentColor") + `<path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg>`,
@@ -19,70 +16,16 @@ const icons = {
     check: S("currentColor") + `<path d="M20 6 9 17l-5-5"></path></svg>`,
     star: S("currentColor", "currentColor") + `<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>`,
     arrowRight: S("currentColor") + `<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>`,
-    arrowDown: S("currentColor") + `<path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>`,
     whatsapp: S("currentColor", "currentColor") + `<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>`
 };
 
 const navItems = [
     { label: "Accueil", href: "#hero" },
     { label: "À propos", href: "#a-propos" },
-    { label: "Services", href: "#services" },
     { label: "Offres web", href: "#offres" },
     { label: "Réalisations", href: "#realisations" },
     { label: "Investir", href: "#investissement" },
     { label: "Témoignages", href: "#temoignages" }
-];
-
-const serviceCards = [
-    {
-        title: "Academy",
-        tagColor: "text-violet",
-        icon: "cap",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-        alt: "Étudiants en formation Texefa, en ligne et en présentiel",
-        intro: "Notre académie forme la prochaine génération de leaders et de spécialistes, avec des programmes intensifs, pratiques et certifiants, adaptés aux besoins du marché.",
-        points: [
-            "Promotion et représentation d'écoles",
-            "Formation en Intelligence Artificielle",
-            "Formation en Scientific Writing",
-            "Formation IT & Développement",
-            "Certifications informatiques internationales",
-            "Ateliers et bootcamps intensifs"
-        ],
-        extra: "Des experts de terrain et des cas concrets, du premier jour."
-    },
-    {
-        title: "Services éditoriaux & scientifiques",
-        tagColor: "text-mauve",
-        icon: "feather",
-        image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop",
-        alt: "Manuscrits et publications scientifiques édités par Texefa",
-        intro: "Un partenaire de confiance pour les chercheurs, les institutions académiques et les éditeurs : qualité, rigueur et visibilité.",
-        points: [
-            "Scientific Writing & Coaching Publication",
-            "Édition scientifique et relecture",
-            "Création de journaux scientifiques",
-            "Conseil d'indexation (Scopus, WoS…)",
-            "Organisation de conférences scientifiques"
-        ],
-        extra: "De la conception à la diffusion internationale."
-    },
-    {
-        title: "Développement IT & IA",
-        tagColor: "text-coral",
-        icon: "code",
-        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
-        alt: "Développeurs Texefa créant des applications et solutions d'intelligence artificielle",
-        intro: "Notre équipe technique transforme vos idées en produits digitaux performants et évolutifs.",
-        points: [
-            "Applications et sites web sur mesure",
-            "Analyse de données et data science",
-            "Dashboards interactifs",
-            "Solutions IA & agentiques (GenAI)",
-            "Développement EdTech"
-        ],
-        extra: "De la conception à la maintenance, avec des technologies de pointe."
-    }
 ];
 
 const testimonials = [
@@ -175,6 +118,21 @@ const offers = [
         ]
     },
     {
+        title: "Analyse de données & BI",
+        price: "150 000",
+        suffix: "FCFA dès",
+        badge: "Données",
+        image: "images/tableau_bord2.jpeg",
+        alt: "Tableau de bord d'analyse de données avec Power BI et Tableau",
+        features: [
+            "Dashboards Power BI & Tableau",
+            "Collecte et nettoyage des données",
+            "Rapports et visualisations interactifs",
+            "Formation de vos équipes",
+            "Suivi & accompagnement"
+        ]
+    },
+    {
         title: "Hébergement & Maintenance",
         price: "75 000",
         suffix: "FCFA / an",
@@ -215,14 +173,14 @@ const projects = [
         tag: "Communication",
         icon: "messages",
         desc: "Application de messagerie et de communication pour les équipes et les réseaux.",
-        color: "text-mauve"
+        color: "text-mauve",
+        images: ["images/nexus_trans_1.jpeg", "images/nexus_trans_2.jpeg", "images/nexus_trans_3.jpeg"]
     }
 ];
 
 const footerNav = [
     { label: "Accueil", href: "#hero" },
     { label: "À propos", href: "#a-propos" },
-    { label: "Services", href: "#services" },
     { label: "Offres web", href: "#offres" },
     { label: "Réalisations", href: "#realisations" },
     { label: "Investir", href: "#investissement" },
@@ -231,7 +189,7 @@ const footerNav = [
 
 const heroSlides = [
     { img: "flyer.jpeg", title: "Brochure officielle — développement web", href: "#offres" },
-    { img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop", title: "Academy & certifications", tag: "Formation", alt: "Étudiants en formation Texefa", href: "#services" },
+    { img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop", title: "Academy & certifications", tag: "Formation", alt: "Étudiants en formation Texefa", href: "#offres" },
     { img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop", title: "Sites, applications & IA", tag: "Présence digitale", alt: "Écran affichant un site web développé par Texefa", href: "#contact" }
 ];
 
@@ -254,55 +212,6 @@ const stats = [
 
 function renderNav(items) {
     return items.map(i => `<li class="nav-item"><a class="nav-link" href="${i.href}">${i.label}</a></li>`).join('');
-}
-
-function renderServiceCards(items) {
-    return items.map((item, index) => {
-        const pointsHtml = item.points.map(p =>
-            `<li><span class="${item.tagColor}">${icons.check}</span>${p}</li>`
-        ).join('');
-        const badge = `
-            <span class="tag-pill ${item.tagColor}">
-                <span class="d-inline-flex">${icons[item.icon]}</span>${item.title.split(' ')[0]}
-            </span>`;
-
-        if (index === 0) {
-            return `
-            <div class="col-lg-7" data-reveal>
-                <article class="service-card d-flex flex-column flex-sm-row">
-                    <div class="col-sm-5 featured-media-col position-relative">
-                        ${badge}
-                        <div class="service-media sm-tall">
-                            <img src="${item.image}" alt="${item.alt}" loading="lazy" width="1200" height="1400">
-                        </div>
-                    </div>
-                    <div class="service-body d-flex flex-column">
-                        <span class="icon-box ${softTints[item.tagColor] || 'soft-violet'} mb-3"><span class="${item.tagColor}">${icons[item.icon]}</span></span>
-                        <h3 class="h4 fw-bold">${item.title}</h3>
-                        <p class="text-body-secondary mt-2">${item.intro}</p>
-                        <ul class="service-points mt-3">${pointsHtml}</ul>
-                        <p class="service-note ${item.tagColor} mt-auto">${item.extra}</p>
-                    </div>
-                </article>
-            </div>`;
-        }
-
-        return `
-            <div class="col-lg-5" data-reveal>
-                <article class="service-card d-flex flex-column">
-                    <div class="service-media sm-wide position-relative">
-                        ${badge}
-                        <img src="${item.image}" alt="${item.alt}" loading="lazy" width="1200" height="750">
-                    </div>
-                    <div class="service-body d-flex flex-column">
-                        <h3 class="h5 fw-bold">${item.title}</h3>
-                        <p class="text-body-secondary mt-2 small">${item.intro}</p>
-                        <ul class="service-points mt-3">${pointsHtml}</ul>
-                        <p class="service-note ${item.tagColor} mt-auto">${item.extra}</p>
-                    </div>
-                </article>
-            </div>`;
-    }).join('');
 }
 
 const starRow = `${icons.star}${icons.star}${icons.star}${icons.star}${icons.star}`;
@@ -446,7 +355,6 @@ function renderProjects(items) {
 /* ---------------- Montage ---------------- */
 
 document.getElementById('nav-list').innerHTML = renderNav(navItems);
-document.getElementById('service-grid').innerHTML = renderServiceCards(serviceCards);
 document.getElementById('testimonial-grid').innerHTML = renderTestimonials(testimonials);
 document.getElementById('future-grid').innerHTML = renderFutureCards(futureCards);
 document.getElementById('footer-nav').innerHTML = renderFooterNav(footerNav);
